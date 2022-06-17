@@ -17,11 +17,13 @@
     <hr>
     <h3>В данном разделе заполняется основная информация об абитуриенте</h3>
  <h4>1. Фамилия абитуриента</h4>
-    <input type="text" placeholder="Фамилия" name="surname">
+    <textarea required name="surname" cols="40" rows="2"></textarea>
+
  <h4>2. Имя абитуриента</h4>
-    <input type="text" placeholder="Имя" name="name">
+    <textarea required name="name" cols="40" rows="2"></textarea>
+
  <h4>3. Отчество абитуриента</h4>
-    <input type="text" placeholder="Отчество" name="patronymic">
+    <textarea required name="patronymic" cols="40" rows="2"></textarea>
  <h4>4. Пол</h4>
     <input list="gender" placeholder="Пол"  name="gender">
     <datalist id="gender">
@@ -31,7 +33,7 @@
  <h4>5. Дата рождения</h4>
     <input type="date" placeholder="Дата рождения" name="birthdate">
  <h4>6. Предыдущее место обучения</h4>
-    <input type="text" placeholder="Предыдущее место обучения" name="oldschool">
+    <textarea required name="oldschool" cols="40" rows="2"></textarea>
     <hr>
     <h1>Дополнительная информация об абитуриенте</h1>
     <hr>
@@ -41,11 +43,12 @@
  <h4>8. Адрес электронной почты</h4>
     <input type="email" placeholder="E-mail" name="email">
  <h4>9. Адрес проживания</h4>
-    <input type="text" placeholder="Город" name="sity">
-    <input type="text" placeholder="Улица" name="street">
-    <input type="number" placeholder="Дом" name="house">
-    <input type="number" placeholder="Корпус" name="housing">
-    <input type="number" placeholder="Квартира" name="flat">
+    <textarea required name="sity" placeholder="Город" cols="20" rows="1"></textarea>
+    <textarea required placeholder="Улица" name="street" cols="20" rows="1"></textarea>
+    <textarea required placeholder="Дом" name="house" cols="20" rows="1"></textarea>
+    <textarea placeholder="Корпус" name="housing" cols="20" rows="1"></textarea>
+    <textarea placeholder="Квартира" name="flat" cols="20" rows="1"></textarea>
+
  <h4>10. Необходимость в общежитии</h4>
     <input list="hostel" placeholder="Необходимость в общежитии" name="hostel">
     <datalist id="hostel">
@@ -53,36 +56,41 @@
     <option>Нет</option>
     </datalist>
  <h4>11. Наличие льгот</h4>
- <input type="text" placeholder="Наличие льгот" name="social_benefits">
+ <input list="social_benefits" placeholder="Наличие льгот" name="social_benefits">
+    <datalist id="social_benefits">
+    <option>Многодетная семья</option>
+    <option>Другое</option>
+    </datalist>
     <hr>
     <h1>Сведения о родителях</h1>
     <hr>
     <h3>В данном разделе вносится информация о родителях(законных представителях) абитуриента</h3>
     <h3>Мать</h3>
  <h4>12. Фамилия</h4>
-    <input type="text" placeholder="Фамилия" name="mother_surname">
+    <textarea required placeholder="Фамилия" name="mother_surname" cols="40" rows="2"></textarea>
  <h4>13. Имя</h4>
-    <input type="text" placeholder="Имя" name="mother_name">
+    <textarea required placeholder="Имя" name="mother_name" cols="40" rows="2"></textarea>
  <h4>14. Отчество</h4>
-    <input type="text" placeholder="Отчество" name="mother_patronymic">
+    <textarea required placeholder="Отчество" name="mother_patronymic" cols="40" rows="2"></textarea>
  <h4>15. Место работы</h4>
-    <input type="text" placeholder="Место работы" name="mother_job">
+    <textarea placeholder="Место работы" name="mother_job" cols="40" rows="2"></textarea>
  <h4>16. Должность</h4>
-    <input type="text" placeholder="Должность" name="mother_job_post">
+    <textarea placeholder="Должность" name="mother_job_post" cols="40" rows="2"></textarea>
  <h4>17. Номер телефона</h4>
     <input type="tel" placeholder="Телефон" name="mother_phone">
     <hr>
     <h3>Отец</h3>
 <h4>18. Фамилия</h4>
-    <input type="text" placeholder="Фамилия" name="father_surname">
+    <textarea required placeholder="Фамилия" name="father_surname" cols="40" rows="2"></textarea>
  <h4>19. Имя</h4>
-    <input type="text" placeholder="Имя" name="father_name">
+    <textarea required placeholder="Имя" name="father_name" cols="40" rows="2"></textarea>
  <h4>20. Отчество</h4>
-    <input type="text" placeholder="Отчество" name="father_patronymic">
+    <textarea required placeholder="Отчество" name="father_patronymic" cols="40" rows="2"></textarea>
  <h4>21. Место работы</h4>
-    <input type="text" placeholder="Место работы" name="father_job">
+    <textarea placeholder="Место работы" name="father_job" cols="40" rows="2"></textarea>
  <h4>22. Должность</h4>
-    <input type="text" placeholder="Должность" name="father_job_post">
+    <textarea placeholder="Должность" name="father_job_post" cols="40" rows="2"></textarea>
+
  <h4>23. Номер телефона</h4>
     <input type="tel" placeholder="Телефон" name="father_phone">
     <hr>
@@ -102,7 +110,7 @@
   <h4>29. Итоговая оценка по обществознанию</h4>
     <input type="number" placeholder="Итоговая оценка по обществознанию" name="mark_social_science">
   <h4>30. Сведения о Ваших достижениях в интеллектуальной, творческой, спортивной и иной деятельности за последние 2 года</h4>
-    <input type="text1" placeholder="Сведения о Ваших достижениях за последние 2 года" name="progress">
+    <textarea placeholder="Сведения о Ваших достижениях за последние 2 года" name="progress" cols="60" rows="5"></textarea>
   <h4>31. Состояли ли Вы на внутришкольном учёте?</h4>
     <input list="control" placeholder="Состояли ли Вы на внутришкольном учёте?" name="control">
     <datalist id="control">
@@ -110,36 +118,47 @@
     <option>Нет</option>
     </datalist>
   <h4>32. По какой причине Вы состояли на внутришкольном учете?</h4>
-    <input type="text" placeholder="По какой причине Вы состояли на внутришкольном учете?" name="control_reason">
+    <textarea placeholder="По какой причине Вы состояли на внутришкольном учете?" name="control_reason" cols="40" rows="2"></textarea>
     <hr>
     <h1>В чём Вы сможете проявить себя?</h1>
     <hr>
  <h4>33. В чём Вы сможете проявить себя?</h4>
-    <input type="text" size="100"  placeholder="В чём Вы сможете проявить себя?" name="participation">
+    <textarea required placeholder="В чём Вы сможете проявить себя?" name="participation" cols="60" rows="5"></textarea>
     <hr>
     <h1>Прочие сведения</h1>
     <hr>
 
     <h3>В данном разделе вносится информация об изучаемом иностранном языке(основном),о пройденных подготовительных курсах в КОГОАУ ВТЛ, наличии сертификата ПФДО и т.д.</h3>
   <h4>34. Иностранный язык</h4>
- <input list="foreign_language" placeholder="Иностранный язык" name="foreign_language">
-<datalist id="foreign_language">
+ .<select name="foreign_language">
     <option>Английский</option>
     <option>Немецкий</option>
     <option>Французский</option>
-   </datalist>
+   </select>
   <h4>35. Курсы по математике</h4>
-    <input type="text" placeholder="Курсы по математике" name="course_vtl_math">
+    .<select type="text"  name="course_vtl_math">
+        <option>Да</option>
+        <option>Нет</option>
+       </select>
   <h4>36. Курсы по физике</h4>
-    <input type="text" placeholder="Курсы по физике" name="course_vtl_physics">
+    .<select type="text"  name="course_vtl_physics">
+        <option>Да</option>
+        <option>Нет</option>
+       </select>
   <h4>37. Курсы по информатике</h4>
-    <input type="text" placeholder="Курсы по информатике" name="course_vtl_informatics">
+    .<select type="text" name="course_vtl_informatics">
+        <option>Да</option>
+        <option>Нет</option>
+       </select>
   <h4>38. Сертификат ПФДО</h4>
-    <input type="text" placeholder="Сертификат ПФДО" name="pfdo_sert">
+    <textarea placeholder="Сертификат ПФДО" name="pfdo_sert" cols="40" rows="1"></textarea>
+
  <hr>
-    <input type="text" placeholder="Я подтверждаю, что все сведения в анкете указаны верно" name="correct">
+    Я подтверждаю, что все сведения в анкете указаны верно
+    <input type="checkbox"  name="correct">
  <hr>
-    <input type="text" placeholder="Согласие на обработку персональных данных" name="agreement">
+    Согласие на обработку персональных данных
+    <input type="checkbox"  name="agreement">
     <hr>
     <input type="submit" value="Добавить запись">
 </form>

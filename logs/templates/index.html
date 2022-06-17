@@ -76,8 +76,8 @@
             <option>Экономика</option>
             <option>Медиакоммуникации</option>
             </select>
+            <input type="image" src="/static/images/ok.png">
             <input type="hidden" value={{request.get_full_path}} name="upd">
-            <input type="submit" value="Изменить">
 </form>
 
         </td>
@@ -106,14 +106,14 @@
     <input type="text" placeholder="Имя" name="name">
     <input type="text" placeholder="Отчество" name="patronymic">
     <input type="text" placeholder="Школа" name="oldschool">
-    <select name="school_class">
-        <option>Направление обучения</option>
+    <input list = "school_class" placeholder="Профиль обучения" name="school_class">
+        <datalist id="school_class" >
         <option>Робототехника</option>
         <option>Языки программирования</option>
         <option>Инженерный класс</option>
         <option>Экономика</option>
         <option>Медиакоммуникации</option>
-    </select>
+    </datalist>
     <input type="hidden" value={{request.get_full_path}} name="upd">
     <input type="submit" value="Добавить запись">
 </form>
