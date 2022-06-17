@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Общий список абитуриентов</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Cписок абитуриентов 2022</h1>
+
+
+<hr>
+<div id ="menu">
+    <a href="/robot">Робототехника</a>
+</div>
+<div id ="menu">
+    <a href="/prog">Языки программирования</a>
+</div>
+<div id ="menu">
+<a href="/ingener">Инженерный класс</a>
+</div>
+<div id ="menu">
+<a href="/econom">Экономика</a>
+</div>
+<div id ="menu">
+<a href="/media">Медиакоммуникации</a>
+</div>
+
+
+
+<table >
+<thead>
+    <tr>
+        <td>
+            №
+        </td>
+        <td>
+            Дата
+        </td>
+        <td>Фамилия
+        </td>
+        <td>Имя
+        </td>
+        <td>Отчество
+        </td>
+        <td>Школа
+        </td>
+        <td>Направление обучения
+        </td>
+        <td>Изменить направление обучения
+        </td>
+        <td>Удалить запись
+        </td>
+    </tr>
+</thead>
+<tbody>
+    {% for i in all_items %}
+    <tr>
+        <td>{{i.date}}</td>
+        <td>{{i.surname}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.patronymic}}</td>
+        <td>{{i.oldschool}}</td>
+
+
+        <td>{{i.school_class}}</td>
+<td>
+<form action="/modProfile/{{i.id}}/" method = "post">
+            {% csrf_token %}
+            <select name="school_class">
+            <option>Выбрать новый класс</option>
+            <option>Робототехника</option>
+            <option>Языки программирования</option>
+            <option>Инженерный класс</option>
+            <option>Экономика</option>
+            <option>Медиакоммуникации</option>
+            </select>
+            <input type="hidden" value={{request.get_full_path}} name="upd">
+            <input type="submit" value="Изменить">
+</form>
+
+        </td>
+
+
+        <td>
+            <form action="/delete/{{i.id}}/" method = "post">
+            {% csrf_token %}
+            <input type="hidden" value={{request.get_full_path}} name="upd">
+            <input type="submit" value="Удалить">
+</form>
+        </td>
+
+    </tr>
+</form>
+{% endfor %}
+    </tbody>
+</table>
+<hr>
+
+<hr>
+<h3>Добавить запись без заполнения анкеты (операция выполняется членами приемной комиссии)<h3>
+<form action="/add/" method = "post">
+    {% csrf_token %}
+    <input type="text" placeholder="Фамилия" name="surname">
+    <input type="text" placeholder="Имя" name="name">
+    <input type="text" placeholder="Отчество" name="patronymic">
+    <input type="text" placeholder="Школа" name="oldschool">
+    <select name="school_class">
+        <option>Направление обучения</option>
+        <option>Робототехника</option>
+        <option>Языки программирования</option>
+        <option>Инженерный класс</option>
+        <option>Экономика</option>
+        <option>Медиакоммуникации</option>
+    </select>
+    <input type="hidden" value={{request.get_full_path}} name="upd">
+    <input type="submit" value="Добавить запись">
+</form>
+
+    <h3>"Удалить все" присутствует в приложении до старта приемной комиссии</h3>
+ <form  action="/deleteall/" method = "post">
+            {% csrf_token %}
+            <input type="hidden" value={{request.get_full_path}} name="upd">
+            <input class ="but1" type="submit"  value="Удалить все">
+</form>
+
+
+
+
+
+
+
+
+</body>
+</html>

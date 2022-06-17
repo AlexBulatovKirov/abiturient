@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница абитуриента</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Анкета абитуриента 2022</h1>
+
+<hr>
+
+<form action="/addabit/" method = "post">
+    {% csrf_token %}
+    <h1>Основные сведения</h1>
+    <hr>
+    <h3>В данном разделе заполняется основная информация об абитуриенте</h3>
+ <h4>1. Фамилия абитуриента</h4>
+    <input type="text" placeholder="Фамилия" name="surname">
+ <h4>2. Имя абитуриента</h4>
+    <input type="text" placeholder="Имя" name="name">
+ <h4>3. Отчество абитуриента</h4>
+    <input type="text" placeholder="Отчество" name="patronymic">
+ <h4>4. Пол</h4>
+    <input list="gender" placeholder="Пол"  name="gender">
+    <datalist id="gender">
+    <option>М</option>
+    <option>Ж</option>
+   </datalist>
+ <h4>5. Дата рождения</h4>
+    <input type="date" placeholder="Дата рождения" name="birthdate">
+ <h4>6. Предыдущее место обучения</h4>
+    <input type="text" placeholder="Предыдущее место обучения" name="oldschool">
+    <hr>
+    <h1>Дополнительная информация об абитуриенте</h1>
+    <hr>
+    <h3>Информация об адресе проживания и контактных данных абитуриента</h3>
+  <h4>7. Номер телефона</h4>
+    <input type="tel" placeholder="Телефон" name="phone">
+ <h4>8. Адрес электронной почты</h4>
+    <input type="email" placeholder="E-mail" name="email">
+ <h4>9. Адрес проживания</h4>
+    <input type="text" placeholder="Город" name="sity">
+    <input type="text" placeholder="Улица" name="street">
+    <input type="number" placeholder="Дом" name="house">
+    <input type="number" placeholder="Корпус" name="housing">
+    <input type="number" placeholder="Квартира" name="flat">
+ <h4>10. Необходимость в общежитии</h4>
+    <input list="hostel" placeholder="Необходимость в общежитии" name="hostel">
+    <datalist id="hostel">
+    <option>Да</option>
+    <option>Нет</option>
+    </datalist>
+ <h4>11. Наличие льгот</h4>
+ <input type="text" placeholder="Наличие льгот" name="social_benefits">
+    <hr>
+    <h1>Сведения о родителях</h1>
+    <hr>
+    <h3>В данном разделе вносится информация о родителях(законных представителях) абитуриента</h3>
+    <h3>Мать</h3>
+ <h4>12. Фамилия</h4>
+    <input type="text" placeholder="Фамилия" name="mother_surname">
+ <h4>13. Имя</h4>
+    <input type="text" placeholder="Имя" name="mother_name">
+ <h4>14. Отчество</h4>
+    <input type="text" placeholder="Отчество" name="mother_patronymic">
+ <h4>15. Место работы</h4>
+    <input type="text" placeholder="Место работы" name="mother_job">
+ <h4>16. Должность</h4>
+    <input type="text" placeholder="Должность" name="mother_job_post">
+ <h4>17. Номер телефона</h4>
+    <input type="tel" placeholder="Телефон" name="mother_phone">
+    <hr>
+    <h3>Отец</h3>
+<h4>18. Фамилия</h4>
+    <input type="text" placeholder="Фамилия" name="father_surname">
+ <h4>19. Имя</h4>
+    <input type="text" placeholder="Имя" name="father_name">
+ <h4>20. Отчество</h4>
+    <input type="text" placeholder="Отчество" name="father_patronymic">
+ <h4>21. Место работы</h4>
+    <input type="text" placeholder="Место работы" name="father_job">
+ <h4>22. Должность</h4>
+    <input type="text" placeholder="Должность" name="father_job_post">
+ <h4>23. Номер телефона</h4>
+    <input type="tel" placeholder="Телефон" name="father_phone">
+    <hr>
+    <h1>Сведения о Вашей успеваемости</h1>
+    <hr>
+    <h3>В данном разделе вносятся сведения об успеваемости абитуриента</h3>
+ <h4>24. Средний балл аттестата</h4>
+    <input type="number" step="0.01" placeholder="Средний балл аттестата" name="mark_averange">
+  <h4>25. Итоговая оценка по математике</h4>
+    <input type="number" placeholder="Итоговая оценка по математике" name="mark_math">
+  <h4>26. Итоговая оценка по русскому языку</h4>
+ <input type="number" placeholder="Итоговая оценка по русскому языку" name="mark_rus">
+  <h4>27. Итоговая оценка по физике</h4>
+    <input type="number" placeholder="Итоговая оценка по физике" name="mark_physics">
+  <h4>28. Итоговая оценка по информатике</h4>
+    <input type="number" placeholder="Итоговая оценка по информатике" name="mark_informatics">
+  <h4>29. Итоговая оценка по обществознанию</h4>
+    <input type="number" placeholder="Итоговая оценка по обществознанию" name="mark_social_science">
+  <h4>30. Сведения о Ваших достижениях в интеллектуальной, творческой, спортивной и иной деятельности за последние 2 года</h4>
+    <input type="text1" placeholder="Сведения о Ваших достижениях за последние 2 года" name="progress">
+  <h4>31. Состояли ли Вы на внутришкольном учёте?</h4>
+    <input list="control" placeholder="Состояли ли Вы на внутришкольном учёте?" name="control">
+    <datalist id="control">
+    <option>Да</option>
+    <option>Нет</option>
+    </datalist>
+  <h4>32. По какой причине Вы состояли на внутришкольном учете?</h4>
+    <input type="text" placeholder="По какой причине Вы состояли на внутришкольном учете?" name="control_reason">
+    <hr>
+    <h1>В чём Вы сможете проявить себя?</h1>
+    <hr>
+ <h4>33. В чём Вы сможете проявить себя?</h4>
+    <input type="text" size="100"  placeholder="В чём Вы сможете проявить себя?" name="participation">
+    <hr>
+    <h1>Прочие сведения</h1>
+    <hr>
+
+    <h3>В данном разделе вносится информация об изучаемом иностранном языке(основном),о пройденных подготовительных курсах в КОГОАУ ВТЛ, наличии сертификата ПФДО и т.д.</h3>
+  <h4>34. Иностранный язык</h4>
+ <input list="foreign_language" placeholder="Иностранный язык" name="foreign_language">
+<datalist id="foreign_language">
+    <option>Английский</option>
+    <option>Немецкий</option>
+    <option>Французский</option>
+   </datalist>
+  <h4>35. Курсы по математике</h4>
+    <input type="text" placeholder="Курсы по математике" name="course_vtl_math">
+  <h4>36. Курсы по физике</h4>
+    <input type="text" placeholder="Курсы по физике" name="course_vtl_physics">
+  <h4>37. Курсы по информатике</h4>
+    <input type="text" placeholder="Курсы по информатике" name="course_vtl_informatics">
+  <h4>38. Сертификат ПФДО</h4>
+    <input type="text" placeholder="Сертификат ПФДО" name="pfdo_sert">
+ <hr>
+    <input type="text" placeholder="Я подтверждаю, что все сведения в анкете указаны верно" name="correct">
+ <hr>
+    <input type="text" placeholder="Согласие на обработку персональных данных" name="agreement">
+    <hr>
+    <input type="submit" value="Добавить запись">
+</form>
+
+</body>
+</html>
+
+

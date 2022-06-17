@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Робототехника</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Профиль Робототехника</h1>
+<div id ="menu-home">
+    <a href="/todo">Вернуться к общему списку</a>
+</div>
+<hr>
+<h3>При изменении класса обучения вы будете перемещены на страницу с общим списком абитуриентов</h3>
+<hr>
+<table>
+    <thead>
+     <tr>
+        <td>
+            №
+        </td>
+        <td>
+            Дата
+        </td>
+        <td>Фамилия
+        </td>
+        <td>Имя
+        </td>
+        <td>Отчество
+        </td>
+        <td>Школа
+        </td>
+        <td>Направление обучения
+        </td>
+         <td>Изменить направление обучения
+        </td>
+         <td>Средний балл аттестата</td>
+        <td>Необходимость в общежитии</td>
+        <td>Прочая информация</td>
+        <td>Удалить запись
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+
+{% for i in all_items %}
+{%if i.school_class == "Робототехника"%}
+    <tr>
+
+        <td>{{i.date}}</td>
+        <td>{{i.surname}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.patronymic}}</td>
+        <td>{{i.oldschool}}</td>
+        <td>{{i.school_class}}</td>
+
+        <td>
+<form action="/modProfile/{{i.id}}/" method = "post">
+            {% csrf_token %}
+            <select name="school_class">
+            <option>Выбрать новый класс</option>
+            <option>Робототехника</option>
+            <option>Языки программирования</option>
+            <option>Инженерный класс</option>
+            <option>Экономика</option>
+            <option>Медиакоммуникации</option>
+            </select>
+            <input type="hidden" value={{request.get_full_path}} name="upd">
+            <input type="submit" value="Изменить">
+</form>
+
+        </td>
+        <td>{{i.mark_averange}}</td>
+        <td>{{i.hostel}}
+            <form action="/modHostel/{{i.id}}/" method = "post">
+                {% csrf_token %}
+                <select name="hostel">
+                <option>Изменить</option>
+                <option>Да</option>
+                <option>Нет</option>
+                </select>
+                <input type="hidden" value={{request.get_full_path}} name="upd">
+                <input type="submit" value="Изменить">
+            </form>
+        </td>
+        <td>
+                Иностранный язык:
+                {{i.foreign_language}}
+                <form action="/modOther/{{i.id}}/" method = "post">
+                    {% csrf_token %}
+                    <select name="foreign_language">
+                    <option>Изменить</option>
+                    <option>Английский</option>
+                    <option>Немецкий</option>
+                    <option>Французский</option>
+                    </select>
+                    <input type="hidden" value={{request.get_full_path}} name="upd">
+                    <input type="submit" value="Изменить">
+                </form>
+                Социальные льготы:
+                {{i.social_benefits}}
+                <form action="/modOther2/{{i.id}}/" method = "post">
+                    {% csrf_token %}
+                    <select name="social_benefits">
+                    <option>Изменить</option>
+                    <option>Многодетная семья</option>
+                    <option>Другое</option>
+                    </select>
+                    <input type="hidden" value={{request.get_full_path}} name="upd">
+                    <input type="submit" value="Изменить">
+                </form>
+                Прочая информация:
+                {{i.other}}
+                <form action="/modOther3/{{i.id}}/" method = "post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Прочая информация" name="other">
+                    <input type="hidden" value={{request.get_full_path}} name="upd">
+                    <input type="submit" value="Изменить">
+                </form>
+        </td>
+
+        <td>
+            <form action="/delete/{{i.id}}/" method = "post">
+            {% csrf_token %}
+            <input type="hidden" value={{request.get_full_path}} name="upd">
+            <input type="submit" value="Удалить">
+</form>
+        </td>
+
+    </tr>
+</form>
+{% endif %}
+{% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

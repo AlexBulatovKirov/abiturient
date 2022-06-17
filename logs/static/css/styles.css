@@ -1,0 +1,95 @@
+#menu {
+
+    text-align: center;
+    margin: 5px;
+    float: left;
+    background-color: #0693cd;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    width: 200px
+}
+
+#menu-home {
+
+    text-align: center;
+    margin: 5px;
+   
+    background-color: #0693cd;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    width: 200px
+}
+
+a {
+    text-decoration: none;
+    font-size:16px;
+    font-weight: bold;
+    color: #fff;
+    
+}
+
+table {
+    text-align: center;
+    width:100%;
+    padding: 4px;
+    /*background-color:#ccc;*/
+    counter-reset: schetchik;
+
+}
+table thead {
+  background-color: #0693cd;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 10px;
+  width: 200px
+}
+
+table td {
+    text-align: center;
+    border-bottom: 3px solid #ccc;
+}
+
+table tbody tr:before {
+    counter-increment: schetchik;
+    content: counter(schetchik);
+    border-bottom: 3px solid #ccc;
+
+}
+
+input[type=submit] {
+
+    border: 1px solid;
+    color: #fff;
+    font-size:12px;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: pointer;
+    background-color: #0693cd;
+    
+}
+input[type=submit2] {
+
+    
+}
+
+input[type=text] {
+
+    width: 400px
+}
+input[type=text1] {
+
+    width: 600px;
+    height:150px;
+}
+input[type=text2] {
+
+    
+}
