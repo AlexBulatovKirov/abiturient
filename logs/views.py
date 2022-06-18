@@ -83,6 +83,15 @@ def modOther3(self,i):
     y.save()
     return HttpResponseRedirect(self.POST['upd'])
 
+def print(self):
+    #y = TodoBase.objects.get(id=i)
+    p = {
+        'q1': 'y.surname',
+        'q2': 'y.name',
+        'q3': 'y.patronymic'
+    }
+    return render(self, 'print.html', context=p)
+
 
 #Страница абитуриента
 def viewabiturient(self):

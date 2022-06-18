@@ -15,23 +15,9 @@
 <hr>
 
 
-
-
-
-<form action ="/print/" method="post">
-
-    <select name="surname">
-
-{% for i in all_items %}
-
-            <option>{{i.surname}} {{i.name}}</option>
-
-        {% endfor %}
-    </select>
-{% csrf_token %}
-    <input type="hidden" value={{request.get_full_path}} name="upd">
-    <input type="image" src="/static/images/ok.png">
-</form>
+{{ q1 }}
+{{ q2 }}
+{{ q3 }}
 
 
 

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from logs.views import viewTODO,viewROBOT,viewPROG,viewINGENER,viewECONOM,viewMEDIA, \
     addTODO, deleteTODO, deleteTODOall, viewabiturient, addabit, modProfile, \
-    modHostel, modOther, modOther2, modOther3, abitprint
+    modHostel, modOther, modOther2, modOther3, abitprint, print
 
 urlpatterns = [
     path('/', admin.site.urls),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('modOther/<int:i>/',modOther),
     path('modOther2/<int:i>/',modOther2),
     path('modOther3/<int:i>/',modOther3),
+    path('print/', print),
     
 ]
