@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Печать анкет</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<div id ="menu-home">
+    <a href="/todo">Вернуться к общему списку</a>
+</div>
+
+<h1>Найти абитуриента</h1>
+<h4>Необходимо ввести номер анкеты в строку поиска</h4>
+
+<form action="/search2/" method = "post">
+
+                    {% csrf_token %}
+                    <input type="number" name = "oth">
+                    <input type="submit" value ="print">
+
+
+</form>
+
+
+{% for i in all_items %}
+<ul>
+    <li>Номер Анкеты {{i.id}} - {{i.surname}}_{{i.name}}_{{i.patronymic}}</li>
+</ul>
+
+{% endfor %}
+
+</body>
+</html>

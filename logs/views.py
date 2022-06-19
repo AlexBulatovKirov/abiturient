@@ -3,6 +3,7 @@ from .models import TodoBase
 from django.http import HttpResponseRedirect
 import datetime
 
+
 def dateadd():
     a = datetime.datetime.today().strftime("%d - %m - %Y")
     return str(a)
@@ -81,26 +82,65 @@ def modOther3(self,i):
     y = TodoBase.objects.get(id=i)
     y.other = self.POST['other']
     y.save()
-    return HttpResponseRedirect(self.POST['upd'])
 
-def print(self):
-    #y = TodoBase.objects.get(id=i)
-    p = {
-        'q1': 'y.surname',
-        'q2': 'y.name',
-        'q3': 'y.patronymic'
-    }
-    return render(self, 'print.html', context=p)
+
 
 
 #Страница абитуриента
 def viewabiturient(self):
     all_todo_items = TodoBase.objects.all()
-    return render(self, 'abit.html', {'all_items': all_todo_items})
+    return render(self, 'abit.html',{'all_items': all_todo_items})
 
-def abitprint(self):
+#Страница поиска
+def search(self):
     all_todo_items = TodoBase.objects.all()
-    return render(self, 'abitprint.html', {'all_items': all_todo_items})
+    return render(self, 'search.html', {'all_items': all_todo_items})
+
+def search2(self):
+    y = TodoBase.objects.get(id=self.POST['oth'])
+    p = {
+        'q1' : y.surname,
+        'q2' : y.name,
+        'q3' : y.patronymic,
+        'q4':y.gender,
+        'q5':y.birthdate,
+        'q6':y.oldschool,
+        'q7':y.phone,
+        'q8':y.email,
+        'q91':y.sity,'q92':y.street, 'q93':y.house, 'q94':y.housing,'q91':y.flat,
+        'q10':y.hostel,
+        'q11':y.social_benefits,
+        'q12':y.mother_surname,
+        'q13':y.mother_name,
+        'q14':y.mother_patronymic,
+        'q15':y.mother_job,
+        'q16':y.mother_job_post,
+        'q17':y.mother_phone,
+        'q18':y.father_surname,
+        'q19':y.father_name,
+        'q20':y.father_patronymic,
+        'q21':y.father_job,
+        'q22':y.father_job_post,
+        'q23':y.father_phone,
+        'q24':y.mark_averange,
+        'q25':y.mark_math,
+        'q26':y.mark_rus,
+        'q27':y.mark_physics,
+        'q28':y.mark_informatics,
+        'q29':y.mark_social_science,
+        'q30':y.progress,
+        'q31':y.control,
+        'q32':y.control_reason,
+        'q33':y.participation,
+        'q34':y.foreign_language,
+        'q35':y.course_vtl_math,
+        'q36':y.course_vtl_physics,
+        'q37':y.course_vtl_informatics,
+        'q38':y.pfdo_sert,
+        'q39':y.correct,
+        'q40':y.agreement
+    }
+    return render(self, 'search2.html', p)
 
 def addabit(self):
     y = TodoBase(date = dateadd(),
