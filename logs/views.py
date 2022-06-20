@@ -30,6 +30,9 @@ def viewECONOM(self):
 def viewMEDIA(self):
     all_todo_items = TodoBase.objects.all()
     return render(self, 'media.html', {'all_items': all_todo_items})
+def view11klass(self):
+    all_todo_items = TodoBase.objects.all()
+    return render(self, '11klass.html', {'all_items': all_todo_items})
 
 
 #Операции с пользовалелями

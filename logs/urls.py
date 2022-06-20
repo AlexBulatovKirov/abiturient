@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from logs.views import viewTODO,viewROBOT,viewPROG,viewINGENER,viewECONOM,viewMEDIA, \
     addTODO, deleteTODO, deleteTODOall, viewabiturient, addabit, modProfile, \
-    modHostel, modOther, modOther2, modOther3, search, search2
+    modHostel, modOther, modOther2, modOther3, search, search2, view11klass
 
 urlpatterns = [
     path('/', admin.site.urls),
@@ -12,6 +12,7 @@ urlpatterns = [
     path('ingener/', viewINGENER),
     path('econom/', viewECONOM),
     path('media/', viewMEDIA),
+    path('11klass/', view11klass),
     path('add/', addTODO),
     path('delete/<int:i>/', deleteTODO),
     path('deleteall/', deleteTODOall),

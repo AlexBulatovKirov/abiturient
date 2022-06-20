@@ -45,7 +45,7 @@
     <tbody>
 
 {% for i in all_items %}
-{%if i.school_class == "Языки программирования"%}
+{%if i.school_class == "11 класс"%}
     <tr>
 
         <td>{{i.date}}</td>
@@ -65,7 +65,6 @@
                         <option>Инженерный класс</option>
                         <option>Экономика</option>
                         <option>Медиакоммуникации</option>
-                            <option>11 класс</option>
                         </select>
                         <input type="image" src="/static/images/ok.png">
                         <input type="hidden" value={{request.get_full_path}} name="upd">
