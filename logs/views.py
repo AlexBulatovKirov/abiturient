@@ -8,6 +8,9 @@ def dateadd():
     a = datetime.datetime.today().strftime("%d - %m - %Y")
     return str(a)
 
+def home(self):
+    return render(self, 'home.html')
+
 def viewTODO(self):
     all_todo_items = TodoBase.objects.all()
     return render(self, 'index.html', {'all_items': all_todo_items})
@@ -151,6 +154,8 @@ def search2(self):
         'q46': y.ank6
     }
     return render(self, 'search2.html', p)
+def abit(self):
+    return HttpResponseRedirect('/abit/')
 
 def addabit(self):
     y = TodoBase(date = dateadd(),
@@ -206,4 +211,4 @@ def addabit(self):
                     ank6 = self.POST['ank6']
                    )
     y.save()
-    return HttpResponseRedirect('/abit/')
+    return render(self, 'abit2.html')

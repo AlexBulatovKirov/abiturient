@@ -7,7 +7,7 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-
+{% if user.is_authenticated %}
     <a href="/todo"><font color="#000000">Вернуться к общему списку</a>
 
 
@@ -66,7 +66,9 @@
 
 
 
-
+{% else %}
+НЕОБХОДИМО АВТОРИЗОВАТЬСЯ, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К СПИСКАМ
+{% endif %}
 
 
 

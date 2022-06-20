@@ -7,6 +7,7 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
+{% if user.is_authenticated %}
 <div id ="menu-home">
     <a href="/todo">Вернуться к общему списку</a>
 </div>
@@ -26,6 +27,8 @@
     <li>Номер Анкеты {{i.id}} - {{i.surname}}_{{i.name}}_{{i.patronymic}}</li>
 </ul>
 {% endfor %}
-
+{% else %}
+НЕОБХОДИМО АВТОРИЗОВАТЬСЯ, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К СПИСКАМ
+{% endif %}
 </body>
 </html>

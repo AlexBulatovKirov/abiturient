@@ -1,4 +1,6 @@
 from django.db import models
+
+
 class TodoBase(models.Model):
     name = models.TextField()
     surname = models.TextField()
