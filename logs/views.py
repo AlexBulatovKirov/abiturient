@@ -138,7 +138,14 @@ def search2(self):
         'q37':y.course_vtl_informatics,
         'q38':y.pfdo_sert,
         'q39':y.correct,
-        'q40':y.agreement
+        'q40':y.agreement,
+
+        'q41': y.ank1,
+        'q42': y.ank2,
+        'q43': y.ank3,
+        'q44': y.ank4,
+        'q45': y.ank5,
+        'q46': y.ank6
     }
     return render(self, 'search2.html', p)
 
@@ -187,7 +194,13 @@ def addabit(self):
                     course_vtl_informatics = self.POST['course_vtl_informatics'],
                     pfdo_sert = self.POST['pfdo_sert'],
                     correct = self.POST['correct'],
-                    agreement = self.POST['agreement']
-                 )
+                    agreement = self.POST['agreement'],
+                    ank1 = self.POST['ank1'],
+                    ank2 = self.POST['ank2'],
+                    ank3 = self.POST['ank3'],
+                    ank4 = self.POST['ank4'],
+                    ank5 = self.POST['ank5'],
+                    ank6 = self.POST['ank6']
+                   )
     y.save()
     return HttpResponseRedirect('/abit/')

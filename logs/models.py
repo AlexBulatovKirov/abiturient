@@ -47,6 +47,11 @@ class TodoBase(models.Model):
     agreement = models.TextField()
     date = models.TextField()
     other = models.TextField()
-
+    ank1 = models.TextField()
+    ank2 = models.TextField()
+    ank3 = models.TextField()
+    ank4 = models.TextField()
+    ank5 = models.TextField()
+    ank6 = models.TextField()
 
 
