@@ -29,7 +29,7 @@
 <div id ="m">
 <a href="/search">Печать анкеты</a>
 </div>
-<div id ="m">
+<div id ="menu">
 <a href="/11klass">11 класс</a>
 </div>
 
@@ -124,14 +124,14 @@
     <input type="hidden" value={{request.get_full_path}} name="upd">
     <input type="submit" value="Добавить запись">
 </form>
-
+<!--
     <h3>"Удалить все" присутствует в приложении до старта приемной комиссии</h3>
  <form  action="/deleteall/" method = "post">
             {% csrf_token %}
             <input type="hidden" value={{request.get_full_path}} name="upd">
             <input class ="but1" type="submit"  value="Удалить все">
 </form>
-
+-->
 
 
 
