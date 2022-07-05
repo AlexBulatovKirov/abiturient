@@ -88,7 +88,7 @@ def modOther3(self,i):
     y = TodoBase.objects.get(id=i)
     y.other = self.POST['other']
     y.save()
-
+    return HttpResponseRedirect(self.POST['upd'])
 
 
 
