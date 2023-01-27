@@ -36,6 +36,9 @@ def viewMEDIA(self):
 def view11klass(self):
     all_todo_items = TodoBase.objects.all()
     return render(self, '11klass.html', {'all_items': all_todo_items})
+def viewarch(self):
+    all_todo_items = TodoBase.objects.all()
+    return render(self, 'arch.html', {'all_items': all_todo_items})
 
 
 #Операции с пользовалелями
@@ -89,6 +92,13 @@ def modOther3(self,i):
     y.other = self.POST['other']
     y.save()
     return HttpResponseRedirect(self.POST['upd'])
+
+def modstatus(self,i):
+    y = TodoBase.objects.get(id=i)
+    y.status = self.POST['status']
+    y.save()
+    return HttpResponseRedirect(self.POST['upd'])
+
 
 
 

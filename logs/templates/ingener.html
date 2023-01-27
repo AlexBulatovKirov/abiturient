@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Инженерный класс</title>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+<link rel="icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body>
 {% if user.is_authenticated %}
@@ -34,7 +35,8 @@
         </td>
         <td>Направление обучения
         </td>
-
+<td>Статус
+         </td>
     <td>Средний балл аттестата</td>
         <td>Необходимость в общежитии</td>
         <td>Прочая информация</td>
@@ -66,6 +68,7 @@
                         <option>Экономика</option>
                         <option>Медиакоммуникации</option>
                             <option>11 класс</option>
+<option>Архив</option>
                         </select>
                         <input type="image" src="/static/images/ok.png">
                         <input type="hidden" value={{request.get_full_path}} name="upd">
@@ -74,6 +77,19 @@
 
 
         </td>
+<td>
+
+  <form action="/modstatus/{{i.id}}/" method = "post">
+                        <div id="text">Cтатус: {{i.status}}</div>
+                    {% csrf_token %}
+                        <select name="status">
+                        <option>Принят</option>
+                        <option>Ожидание документов</option>
+                        </select>
+                        <input type="image" src="/static/images/ok.png">
+                        <input type="hidden" value={{request.get_full_path}} name="upd">
+                </form>
+         </td>
         <td>{{i.mark_averange}}</td>
         <td>
             <form action="/modHostel/{{i.id}}/" method = "post">

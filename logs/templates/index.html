@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Общий список абитуриентов</title>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body>
 <h1>Cписок абитуриентов 2022</h1>
@@ -31,6 +32,9 @@
 </div>
 <div id ="menu">
 <a href="/11klass">11 класс</a>
+</div>
+<div id ="menu">
+<a href="/arch">Архив</a>
 </div>
 
 
@@ -82,6 +86,7 @@
             <option>Экономика</option>
             <option>Медиакоммуникации</option>
             <option>11 класс</option>
+            <option>Архив</option>
             </select>
             <input type="image" src="/static/images/ok.png">
             <input type="hidden" value={{request.get_full_path}} name="upd">

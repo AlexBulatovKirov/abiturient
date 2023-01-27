@@ -55,5 +55,6 @@ class TodoBase(models.Model):
     ank4 = models.TextField()
     ank5 = models.TextField()
     ank6 = models.TextField()
+    status = models.TextField()
 
 
